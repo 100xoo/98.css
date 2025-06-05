@@ -53,7 +53,7 @@ Refer to the [documentation page](https://jdan.github.io/98.css/) for specific i
 
 First, run `npm install`.
 
-[`style.css`](https://github.com/jdan/98.css/blob/main/style.css) is where everything happens.
+[`style.scss`](https://github.com/jdan/98.css/blob/main/style.scss) is where everything happens.
 
 You can use `npm start` to start a development environment that will watch for file changes and rebuild 98.css, reloading your browser in the process.
 
