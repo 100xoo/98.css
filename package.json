@@ -40,6 +40,7 @@
     "postcss-copy": "^7.1.0",
     "postcss-css-variables": "^0.14.0",
     "postcss-inline": "^1.2.0",
-    "postcss-inline-svg": "^4.1.0"
+    "postcss-inline-svg": "^4.1.0",
+    "sass": "^1.89.1"
   }
 }

@@ -6,13 +6,15 @@ const glob = require("glob");
 const hljs = require("highlight.js");
 const mkdirp = require("mkdirp");
 const path = require("path");
+const sass = require("sass");
 const postcss = require("postcss");
 
 const { homepage, version } = require("./package.json");
 
 function buildCSS() {
+  const compiled = sass.renderSync({ file: "style.scss" }).css.toString();
   const input =
-    `/*! 98.css v${version} - ${homepage} */\n` + fs.readFileSync("style.css");
+    `/*! 98.css v${version} - ${homepage} */\n` + compiled;
 
   return postcss()
     .use(require("postcss-inline-svg"))
@@ -21,7 +23,7 @@ function buildCSS() {
     .use(require("postcss-copy")({ dest: "dist", template: "[name].[ext]" }))
     .use(require("cssnano"))
     .process(input, {
-      from: "style.css",
+      from: "style.scss",
       to: "dist/98.css",
       map: { inline: false },
     })
